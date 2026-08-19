@@ -3,9 +3,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react'
 import { Icon } from '@/lib/icons'
 import { heroSlides } from '@/data/content'
 import { Aurora } from '@/components/ui/Atoms'
-import { TiltCard } from '@/components/ui/Cards'
 import Button from '@/components/ui/Button'
-import SmartImage from '@/components/ui/SmartImage'
 import { usePrefersReducedMotion } from '@/hooks/useMediaQuery'
 
 const SLIDE_MS = 6500
@@ -42,7 +40,6 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end start'] })
   const copyY = useTransform(scrollYProgress, [0, 1], ['0%', '32%'])
   const copyFade = useTransform(scrollYProgress, [0, 0.7], [1, 0])
-  const artY = useTransform(scrollYProgress, [0, 1], ['0%', '-14%'])
 
   const go = useCallback((next) => {
     setIndex(((next % heroSlides.length) + heroSlides.length) % heroSlides.length)
@@ -84,7 +81,7 @@ export default function Hero() {
       <Aurora className="-z-10 opacity-80" />
       <div aria-hidden="true" className="grid-lines absolute inset-0 -z-10 opacity-[0.13]" />
 
-      <div className="shell relative grid w-full items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 xl:gap-16">
+      <div className="shell relative w-full">
         {/* ---------------- Copy ---------------- */}
         <motion.div style={reduced ? undefined : { y: copyY, opacity: copyFade }} className="relative max-w-2xl">
           <AnimatePresence mode="wait">
@@ -191,63 +188,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* ---------------- Art ---------------- */}
-        <motion.div style={reduced ? undefined : { y: artY }} className="relative hidden lg:block">
-          <TiltCard strength={7} className="relative mx-auto max-w-[26.5rem] xl:max-w-[29rem]">
-            {/* Main frame */}
-            <div className="relative rounded-[2.25rem] border border-white/15 bg-white/6 p-2.5 backdrop-blur-md shadow-[0_50px_120px_-40px_rgba(0,0,0,.85)]">
-              <div className="absolute -inset-px rounded-[2.25rem] bg-[linear-gradient(140deg,color-mix(in_srgb,var(--color-ember-500)_60%,transparent),transparent_45%,color-mix(in_srgb,var(--color-ember-600)_50%,transparent))] opacity-70 blur-[1px] -z-10" />
-              <SmartImage
-                src="/assets/img/new_slider/child-making-robot.jpg"
-                fallback="/assets/img/new_slider/father-son-making-robot.jpg"
-                initials="TS"
-                alt="Student building a robotics project at TechStar Innovation Hub"
-                loading="eager"
-                wrapperClassName="rounded-[1.85rem] aspect-4/5"
-                className="size-full object-cover"
-              />
-
-              {/* Live impact chip */}
-              <motion.div
-                animate={reduced ? undefined : { y: [0, -12, 0] }}
-                transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -left-10 bottom-16 flex items-center gap-3 rounded-2xl border border-white/20 bg-navy-950/70 px-4 py-3 backdrop-blur-xl shadow-[0_20px_50px_-20px_rgba(0,0,0,.9)]"
-              >
-                <span className="relative flex size-2.5">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-ember-300 opacity-75" />
-                  <span className="relative inline-flex size-2.5 rounded-full bg-ember-300" />
-                </span>
-                <span className="flex flex-col leading-tight">
-                  <span className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/50">
-                    Live impact
-                  </span>
-                  <span className="text-sm font-bold text-white">3,500+ students trained</span>
-                </span>
-              </motion.div>
-
-              {/* Floating badge */}
-              <motion.div
-                animate={reduced ? undefined : { y: [0, 10, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-                className="absolute -right-8 top-10 flex items-center gap-2.5 rounded-2xl border border-white/20 bg-ember-500/90 px-4 py-3 shadow-[0_20px_50px_-20px_rgba(247,146,30,.9)] backdrop-blur-xl"
-              >
-                <Icon.robot className="size-5 text-white" />
-                <span className="flex flex-col leading-tight text-white">
-                  <span className="text-[0.62rem] font-bold uppercase tracking-[0.16em] opacity-75">
-                    Hands-on
-                  </span>
-                  <span className="text-sm font-bold">Robotics & IoT</span>
-                </span>
-              </motion.div>
-            </div>
-          </TiltCard>
-
-          {/* Orbiting accent ring */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-16 -top-14 -z-10 size-64 animate-spin-slow rounded-full border border-dashed border-white/12"
-          />
-        </motion.div>
       </div>
 
       {/* Quick facts rail */}

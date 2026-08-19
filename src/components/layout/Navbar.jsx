@@ -38,52 +38,6 @@ function ThemeToggle({ className }) {
   )
 }
 
-function TopBar() {
-  return (
-    <div className="hidden border-b border-white/10 bg-navy-950 text-navy-100/80 lg:block">
-      <div className="shell flex h-10 items-center justify-between text-[0.78rem]">
-        <div className="flex items-center gap-6">
-          <span className="inline-flex items-center gap-2">
-            <Icon.mapPin className="size-3.5 text-ember-400" />
-            {site.locations.join(' · ')}
-          </span>
-          <a
-            href={`mailto:${site.email}`}
-            className="inline-flex items-center gap-2 transition-colors hover:text-ember-400"
-          >
-            <Icon.mail className="size-3.5 text-ember-400" />
-            {site.email}
-          </a>
-          <a
-            href={`tel:${site.phones[0].replace(/\s/g, '')}`}
-            className="inline-flex items-center gap-2 transition-colors hover:text-ember-400"
-          >
-            <Icon.phone className="size-3.5 text-ember-400" />
-            {site.phones[0]}
-          </a>
-        </div>
-        <div className="flex items-center gap-1">
-          {socials.map((social) => {
-            const SocialGlyph = SocialIcon[social.icon]
-            return (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label={social.label}
-                className="grid size-7 place-items-center rounded-full transition-colors hover:bg-white/10 hover:text-ember-400"
-              >
-                <SocialGlyph className="size-3.5" />
-              </a>
-            )
-          })}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function MegaMenu({ items, onNavigate }) {
   return (
     <motion.div
@@ -319,8 +273,6 @@ export default function Navbar() {
       </a>
 
       <header className="sticky top-0 z-[60] w-full">
-        <TopBar />
-
         <div
           className={cn(
             'w-full transition-all duration-500',
