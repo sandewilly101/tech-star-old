@@ -20,7 +20,7 @@ export default function ProcessTimeline() {
     <section className="relative overflow-hidden bg-surface-2 py-20 lg:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/4 size-[30rem] rounded-full bg-plasma-500/8 blur-[130px]"
+        className="pointer-events-none absolute -right-32 top-1/4 size-[30rem] rounded-full bg-ember-600/8 blur-[130px]"
       />
 
       <div className="shell relative">
@@ -40,7 +40,7 @@ export default function ProcessTimeline() {
           >
             <motion.div
               style={reduced ? { scaleY: 1 } : { scaleY: spine }}
-              className="h-full w-full origin-top rounded-full bg-[linear-gradient(180deg,var(--color-ember-500),var(--color-plasma-500))]"
+              className="h-full w-full origin-top rounded-full bg-[linear-gradient(180deg,var(--color-ember-500),var(--color-ember-600))]"
             />
           </div>
 
@@ -66,7 +66,7 @@ export default function ProcessTimeline() {
                       />
 
                       <div className="flex items-center justify-between">
-                        <span className="grid size-13 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-ember-400 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 [&>svg]:size-5">
+                        <span className="grid size-13 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-ember-500 to-ember-600 text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 [&>svg]:size-5">
                           <Glyph />
                         </span>
                         <span className="font-display text-[2.6rem] font-extrabold leading-none text-hairline-strong transition-colors duration-500 group-hover:text-ember-500/40">

@@ -50,7 +50,7 @@ export default function Footer() {
       {/* Ambient brand glow */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-40 top-0 size-[34rem] rounded-full bg-ember-500/12 blur-[130px]" />
-        <div className="absolute -right-32 bottom-0 size-[30rem] rounded-full bg-plasma-500/12 blur-[130px]" />
+        <div className="absolute -right-32 bottom-0 size-[30rem] rounded-full bg-ember-600/12 blur-[130px]" />
         <div className="grid-lines absolute inset-0 opacity-[0.18]" />
       </div>
 

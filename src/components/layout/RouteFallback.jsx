@@ -7,7 +7,7 @@ export default function RouteFallback() {
       <div className="flex flex-col items-center gap-5">
         <span className="relative grid size-16 place-items-center">
           <span className="absolute inset-0 animate-pulse-ring rounded-full bg-ember-500/30" />
-          <span className="relative grid size-16 place-items-center rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-ember-400">
+          <span className="relative grid size-16 place-items-center rounded-2xl bg-gradient-to-br from-ember-500 to-ember-600 text-white">
             <Icon.sparkle className="size-7 animate-pulse" />
           </span>
         </span>

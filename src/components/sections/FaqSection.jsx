@@ -10,7 +10,7 @@ export default function FaqSection() {
     <section className="relative overflow-hidden bg-surface-2 py-20 lg:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-1/3 size-[28rem] rounded-full bg-plasma-500/8 blur-[130px]"
+        className="pointer-events-none absolute -right-32 top-1/3 size-[28rem] rounded-full bg-ember-600/8 blur-[130px]"
       />
 
       <div className="shell relative grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">

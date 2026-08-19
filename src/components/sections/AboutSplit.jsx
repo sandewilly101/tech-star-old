@@ -27,7 +27,7 @@ export default function AboutSplit() {
     <section ref={ref} id="about" className="relative overflow-hidden bg-canvas py-20 lg:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 top-1/4 size-[32rem] rounded-full bg-plasma-500/6 blur-[120px]"
+        className="pointer-events-none absolute -left-40 top-1/4 size-[32rem] rounded-full bg-ember-600/6 blur-[120px]"
       />
 
       <div className="shell grid items-center gap-14 lg:grid-cols-2 lg:gap-20">

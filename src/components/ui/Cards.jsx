@@ -15,10 +15,8 @@ export function SpotlightCard({ children, className, glow = 'ember', as: Tag = '
 
   const tint = {
     ember: 'var(--color-ember-500)',
-    plasma: 'var(--color-plasma-500)',
-    aqua: 'var(--color-aqua-500)',
     navy: 'var(--color-navy-600)',
-  }[glow]
+  }[glow] ?? 'var(--color-ember-500)'
 
   const background = useMotionTemplate`radial-gradient(340px circle at ${mx}px ${my}px, color-mix(in srgb, ${tint} 16%, transparent), transparent 72%)`
 

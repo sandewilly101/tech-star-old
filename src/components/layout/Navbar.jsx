@@ -123,7 +123,7 @@ function MegaMenu({ items, onNavigate }) {
         <Link
           to="/programs"
           onClick={onNavigate}
-          className="mt-2 flex items-center justify-between rounded-2xl bg-navy-900 px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+          className="mt-2 flex items-center justify-between rounded-2xl bg-ember-500 px-5 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-ember-600"
         >
           Browse every programme
           <Icon.arrowRight className="size-4" />

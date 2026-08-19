@@ -63,10 +63,12 @@ legacy/                    The original static HTML site, kept for reference onl
 
 Everything is driven by tokens in `src/styles/index.css`.
 
-- **Brand colours** come straight from the TechStar logo: navy `#070640` and
-  ember/orange `#f7921e`, each expanded into a 50–950 scale. Two supporting hues
-  (`plasma`, `aqua`) exist only for gradients and glows, so the brand pair always
-  stays dominant.
+- **Brand colours** are three and only three, matching techstarhub.or.tz: navy
+  `#070640`, ember/orange `#f7921e` and white. Navy and ember are each expanded
+  into a 50–950 scale; there is no third hue anywhere in the palette.
+- **Orange leads.** Ember owns the buttons, icon tiles, glows, eyebrows and the
+  call-to-action panels. Navy is the dark neutral behind type, the hero and the
+  footer — it supports the orange rather than competing with it.
 - **Semantic tokens** (`canvas`, `surface`, `ink`, `hairline`, …) are the ones
   components actually use. They are redefined under `.dark`, which is how the
   whole site flips theme from one class on `<html>`.

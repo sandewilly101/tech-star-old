@@ -9,7 +9,7 @@ import Reveal from '@/components/ui/Reveal'
 import Button from '@/components/ui/Button'
 import SmartImage from '@/components/ui/SmartImage'
 
-const accents = ['ember', 'plasma', 'aqua', 'navy']
+const accents = ['ember', 'ember', 'ember', 'navy']
 
 /** Bento layout: one tall statement panel beside a grid of differentiators. */
 export default function WhyUs() {
@@ -31,7 +31,7 @@ export default function WhyUs() {
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-16 top-0 size-56 rounded-full bg-plasma-500/20 blur-[80px]"
+              className="pointer-events-none absolute -left-16 top-0 size-56 rounded-full bg-ember-600/20 blur-[80px]"
             />
 
             <div className="relative">

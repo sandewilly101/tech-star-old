@@ -157,7 +157,7 @@ export default function Courses() {
                 { value: 60, suffix: '+', label: 'TechStar IoT kits', icon: Icon.chip },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-ember-400">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-ember-500 to-ember-600 text-white">
                     <item.icon className="size-5" />
                   </span>
                   <span>

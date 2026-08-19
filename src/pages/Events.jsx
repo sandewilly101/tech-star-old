@@ -53,7 +53,7 @@ export default function Events() {
                   variants={revealItem}
                   className="group rounded-3xl border border-hairline bg-surface p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-ember-500/40 hover:shadow-[0_28px_60px_-30px_rgba(7,6,64,.4)]"
                 >
-                  <span className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-ember-400 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
+                  <span className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-ember-500 to-ember-600 text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
                     <Glyph className="size-5" />
                   </span>
                   <h3 className="mt-6 text-base font-extrabold text-ink">{item.title}</h3>

@@ -26,13 +26,13 @@ const values = [
   {
     title: 'Vision',
     icon: 'lightbulb',
-    accent: 'plasma',
+    accent: 'ember',
     body: 'A Tanzania where every young person, wherever they live, can turn an idea into a working solution for their own community.',
   },
   {
     title: 'Belief',
     icon: 'star',
-    accent: 'aqua',
+    accent: 'ember',
     body: 'The future belongs to the innovators. We nurture young minds to become the tech and business leaders of tomorrow.',
   },
 ]

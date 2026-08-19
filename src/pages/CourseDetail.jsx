@@ -140,7 +140,7 @@ export default function CourseDetail() {
             <aside className="lg:sticky lg:top-32 lg:self-start">
               <Reveal direction="left">
                 <div className="overflow-hidden rounded-[1.75rem] border border-hairline bg-surface">
-                  <div className="border-b border-hairline bg-gradient-to-br from-navy-900 to-navy-700 px-7 py-8 text-white">
+                  <div className="border-b border-hairline bg-gradient-to-br from-ember-500 to-ember-600 px-7 py-8 text-white">
                     <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ember-300">
                       Course fee
                     </span>

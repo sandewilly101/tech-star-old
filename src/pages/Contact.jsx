@@ -106,7 +106,7 @@ export default function Contact() {
                     href={channel.href ?? undefined}
                     className="group flex h-full items-start gap-4 rounded-3xl border border-hairline bg-surface p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-ember-500/40 hover:shadow-[0_28px_60px_-30px_rgba(7,6,64,.4)]"
                   >
-                    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-ember-400 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
+                    <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-ember-500 to-ember-600 text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
                       <Glyph className="size-5" />
                     </span>
                     <span className="min-w-0">
@@ -219,7 +219,7 @@ export default function Contact() {
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       role="status"
-                      className="inline-flex items-center gap-2 text-[0.88rem] font-medium text-aqua-500"
+                      className="inline-flex items-center gap-2 text-[0.88rem] font-medium text-ember-400"
                     >
                       <Icon.check className="size-4" />
                       Your email app should now be open with the message ready.

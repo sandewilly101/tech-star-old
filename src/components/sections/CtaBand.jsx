@@ -14,20 +14,20 @@ export default function CtaBand({
     <section className="relative bg-canvas pb-20 lg:pb-28">
       <div className="shell">
         <Reveal>
-          <div className="noise relative isolate overflow-hidden rounded-[2rem] bg-navy-950 px-7 py-16 text-center sm:px-12 lg:rounded-[2.5rem] lg:px-20 lg:py-24">
+          <div className="noise relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(125deg,var(--color-ember-600),var(--color-ember-500)_45%,var(--color-ember-600))] px-7 py-16 text-center sm:px-12 lg:rounded-[2.5rem] lg:px-20 lg:py-24">
             {/* Glow field */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -left-24 -top-24 size-96 animate-drift rounded-full bg-ember-500/25 blur-[110px]"
+              className="pointer-events-none absolute -left-24 -top-24 size-96 animate-drift rounded-full bg-ember-300/35 blur-[110px]"
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-32 -right-20 size-[26rem] animate-drift-rev rounded-full bg-plasma-500/25 blur-[110px]"
+              className="pointer-events-none absolute -bottom-32 -right-20 size-[26rem] animate-drift-rev rounded-full bg-ember-700/40 blur-[110px]"
             />
             <div aria-hidden="true" className="grid-lines absolute inset-0 -z-10 opacity-[0.16]" />
 
             <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/8 px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ember-300 backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-md">
                 <Icon.zap className="size-3.5" />
                 {eyebrow}
               </span>
@@ -36,7 +36,7 @@ export default function CtaBand({
                 {title}
               </h2>
 
-              <p className="max-w-2xl text-[1rem] leading-relaxed text-navy-100/72">{copy}</p>
+              <p className="max-w-2xl text-[1rem] leading-relaxed text-white/85">{copy}</p>
 
               <div className="mt-3 flex flex-wrap justify-center gap-3.5">
                 <Button to={primary.to} size="lg" variant="white" icon={Icon.arrowRight}>

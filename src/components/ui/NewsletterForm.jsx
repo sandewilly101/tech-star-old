@@ -116,8 +116,8 @@ export default function NewsletterForm({ className, variant = 'dark', compact = 
               'mt-3 flex items-center gap-2 px-2 text-sm font-medium',
               status === 'success'
                 ? onDark
-                  ? 'text-aqua-300'
-                  : 'text-aqua-500'
+                  ? 'text-ember-200'
+                  : 'text-ember-400'
                 : onDark
                   ? 'text-ember-300'
                   : 'text-ember-600',

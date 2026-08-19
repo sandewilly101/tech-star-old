@@ -49,14 +49,14 @@ export const services = [
     description:
       "Strategic guidance for digital transformation: optimising operations with cloud solutions, cybersecurity enhancements and process improvements.",
     icon: "gear",
-    accent: "plasma",
+    accent: "ember",
   },
   {
     title: "Prototyping and Testing",
     description:
       "Developing and testing product prototypes to identify design flaws and refine concepts, ensuring successful outcomes through iterative processes.",
     icon: "box",
-    accent: "aqua",
+    accent: "ember",
   },
   {
     title: "PCB Design and Development",
@@ -77,7 +77,7 @@ export const services = [
     description:
       "Affordable, hands-on kits for students of all ages — built to teach the fundamentals of robotics, coding and IoT and grow real technical skill.",
     icon: "robot",
-    accent: "plasma",
+    accent: "ember",
   },
 ];
 

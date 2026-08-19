@@ -196,7 +196,7 @@ export default function Hero() {
           <TiltCard strength={7} className="relative mx-auto max-w-[26.5rem] xl:max-w-[29rem]">
             {/* Main frame */}
             <div className="relative rounded-[2.25rem] border border-white/15 bg-white/6 p-2.5 backdrop-blur-md shadow-[0_50px_120px_-40px_rgba(0,0,0,.85)]">
-              <div className="absolute -inset-px rounded-[2.25rem] bg-[linear-gradient(140deg,color-mix(in_srgb,var(--color-ember-500)_60%,transparent),transparent_45%,color-mix(in_srgb,var(--color-plasma-500)_50%,transparent))] opacity-70 blur-[1px] -z-10" />
+              <div className="absolute -inset-px rounded-[2.25rem] bg-[linear-gradient(140deg,color-mix(in_srgb,var(--color-ember-500)_60%,transparent),transparent_45%,color-mix(in_srgb,var(--color-ember-600)_50%,transparent))] opacity-70 blur-[1px] -z-10" />
               <SmartImage
                 src="/assets/img/new_slider/child-making-robot.jpg"
                 fallback="/assets/img/new_slider/father-son-making-robot.jpg"
@@ -214,8 +214,8 @@ export default function Hero() {
                 className="absolute -left-10 bottom-16 flex items-center gap-3 rounded-2xl border border-white/20 bg-navy-950/70 px-4 py-3 backdrop-blur-xl shadow-[0_20px_50px_-20px_rgba(0,0,0,.9)]"
               >
                 <span className="relative flex size-2.5">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-aqua-400 opacity-75" />
-                  <span className="relative inline-flex size-2.5 rounded-full bg-aqua-400" />
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-ember-300 opacity-75" />
+                  <span className="relative inline-flex size-2.5 rounded-full bg-ember-300" />
                 </span>
                 <span className="flex flex-col leading-tight">
                   <span className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/50">

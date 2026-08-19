@@ -5,9 +5,10 @@
 
 /* ==========================================================================
    Design tokens
-   Brand DNA: TechStar navy (#070640) + TechStar ember/orange (#f7921e),
-   extended into full scales plus two supporting hues used only inside
-   gradients and glows so the brand pair always stays dominant.
+   Three colours only, exactly as on techstarhub.or.tz: brand navy (#070640),
+   brand orange (#f7921e) and white. Orange leads — it owns the buttons, icon
+   tiles, glows and the call-to-action panels. Navy is the dark neutral for
+   type and dark sections. There is no third hue anywhere in the palette.
    ========================================================================== */
 @theme {
   --font-display: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
@@ -37,15 +38,6 @@
   --color-ember-800: #8a4b0b;
   --color-ember-900: #5f340a;
   --color-ember-950: #331b04;
-
-  --color-plasma-300: #c4b5fd;
-  --color-plasma-400: #a78bfa;
-  --color-plasma-500: #7c5cff;
-  --color-plasma-600: #6438f0;
-
-  --color-aqua-300: #7ff0ea;
-  --color-aqua-400: #38e0d8;
-  --color-aqua-500: #12c8c0;
 
   --radius-4xl: 2rem;
   --radius-5xl: 2.5rem;
@@ -147,7 +139,7 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-ink-muted: var(--ink-muted);
-  --color-brand: var(--color-navy-900);
+  --color-brand: var(--color-ember-500);
   --color-accent: var(--color-ember-500);
 }
 
@@ -155,27 +147,27 @@
   :root {
     --canvas: #ffffff;
     --surface: #ffffff;
-    --surface-2: #f5f6fb;
-    --surface-3: #eceefa;
-    --hairline: #e6e7f4;
-    --hairline-strong: #d3d5ea;
+    --surface-2: #f8f8fa;
+    --surface-3: #f0f0f4;
+    --hairline: #e8e8ee;
+    --hairline-strong: #d6d6e0;
     --ink: #070640;
-    --ink-soft: #4a4d76;
-    --ink-muted: #82859f;
+    --ink-soft: #55566d;
+    --ink-muted: #8b8ca0;
     --ring-color: color-mix(in srgb, var(--color-ember-500) 70%, transparent);
     color-scheme: light;
   }
 
   .dark {
-    --canvas: #05041c;
-    --surface: #0c0a2f;
-    --surface-2: #0a0927;
-    --surface-3: #14123f;
+    --canvas: #06051f;
+    --surface: #0d0b30;
+    --surface-2: #0a0827;
+    --surface-3: #16144a;
     --hairline: color-mix(in srgb, #ffffff 10%, transparent);
     --hairline-strong: color-mix(in srgb, #ffffff 18%, transparent);
-    --ink: #f3f3fc;
-    --ink-soft: #b9bad9;
-    --ink-muted: #8b8db4;
+    --ink: #f5f5fb;
+    --ink-soft: #bcbdd4;
+    --ink-muted: #8e8fa8;
     color-scheme: dark;
   }
 
@@ -320,7 +312,7 @@
       color-mix(in srgb, var(--color-ember-500) 70%, transparent),
       transparent 42%,
       transparent 58%,
-      color-mix(in srgb, var(--color-plasma-500) 60%, transparent)
+      color-mix(in srgb, var(--color-ember-600) 60%, transparent)
     );
     -webkit-mask:
       linear-gradient(#fff 0 0) content-box,

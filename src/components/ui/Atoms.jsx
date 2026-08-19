@@ -172,7 +172,7 @@ export function Aurora({ className, intensity = 'normal' }) {
         )}
         style={{
           background:
-            'radial-gradient(circle at 60% 40%, color-mix(in srgb, var(--color-plasma-500) 55%, transparent), transparent 64%)',
+            'radial-gradient(circle at 60% 40%, color-mix(in srgb, var(--color-ember-600) 55%, transparent), transparent 64%)',
         }}
       />
       <div
@@ -182,7 +182,7 @@ export function Aurora({ className, intensity = 'normal' }) {
         )}
         style={{
           background:
-            'radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-aqua-500) 42%, transparent), transparent 66%)',
+            'radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-ember-400) 42%, transparent), transparent 66%)',
         }}
       />
     </div>
@@ -194,18 +194,16 @@ export function ProgressBar({ scaleX }) {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-[70] h-[3px] origin-left bg-[linear-gradient(90deg,var(--color-ember-500),var(--color-plasma-500),var(--color-aqua-400))]"
+      className="fixed inset-x-0 top-0 z-[70] h-[3px] origin-left bg-[linear-gradient(90deg,var(--color-ember-500),var(--color-ember-600),var(--color-ember-300))]"
     />
   )
 }
 
-/** Rounded icon tile in one of the four brand accents. */
+/** Rounded icon tile. Solid brand orange by default, navy as the quiet alternate. */
 export function IconTile({ icon: IconComponent, accent = 'ember', className, size = 'md' }) {
   const accents = {
-    ember: 'from-ember-500/22 to-ember-500/5 text-ember-600 dark:text-ember-400 ring-ember-500/20',
-    plasma: 'from-plasma-500/22 to-plasma-500/5 text-plasma-500 dark:text-plasma-300 ring-plasma-500/20',
-    aqua: 'from-aqua-500/22 to-aqua-500/5 text-aqua-500 dark:text-aqua-300 ring-aqua-500/20',
-    navy: 'from-navy-600/20 to-navy-600/5 text-navy-700 dark:text-navy-200 ring-navy-600/20',
+    ember: 'from-ember-400 to-ember-600 text-white ring-ember-500/30',
+    navy: 'from-navy-800 to-navy-900 text-ember-400 ring-navy-900/25',
   }
   const sizes = {
     sm: 'size-11 rounded-xl [&>svg]:size-5',

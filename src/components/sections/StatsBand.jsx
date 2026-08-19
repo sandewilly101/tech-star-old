@@ -23,7 +23,7 @@ export default function StatsBand({ className = '' }) {
                   aria-hidden="true"
                   className="absolute -right-6 -top-6 size-24 rounded-full bg-ember-500/8 blur-2xl transition-all duration-500 group-hover:bg-ember-500/18"
                 />
-                <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-ember-400 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
+                <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-gradient-to-br from-ember-500 to-ember-600 text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
                   <Glyph className="size-5" />
                 </span>
                 <p className="mt-6 font-display text-4xl font-extrabold leading-none text-ink lg:text-[2.75rem]">
