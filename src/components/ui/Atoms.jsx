@@ -4,50 +4,65 @@ import { cn } from '@/lib/utils'
 import { usePrefersReducedMotion } from '@/hooks/useMediaQuery'
 import Reveal from './Reveal'
 
-/** Small uppercase label that sits above every section title. */
-export function Eyebrow({ children, icon: IconComponent, className, onDark = false }) {
+/**
+ * Editorial section label: a monospace index, a hairline rule and the label
+ * itself. Deliberately not a pill — the pill-on-every-section look is what
+ * made the page read as generic.
+ */
+export function Eyebrow({ children, index, className, onDark = false }) {
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.18em]',
-        onDark
-          ? 'border-white/20 bg-white/10 text-ember-300 backdrop-blur-md'
-          : 'border-ember-500/25 bg-ember-500/8 text-ember-700 dark:text-ember-300',
+        'flex items-center gap-3 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.24em]',
+        onDark ? 'text-ember-300' : 'text-ember-600 dark:text-ember-400',
         className,
       )}
     >
-      {IconComponent && <IconComponent className="size-3.5" />}
+      {index && <span className={onDark ? 'text-white/35' : 'text-ink-muted/60'}>{index}</span>}
+      <span
+        aria-hidden="true"
+        className={cn('h-px w-8 shrink-0', onDark ? 'bg-white/25' : 'bg-hairline-strong')}
+      />
       {children}
     </span>
   )
 }
 
-/** Section title block: eyebrow, headline, supporting line. */
+/**
+ * Section title block. Left-aligned by default so sections read as an
+ * editorial column rather than a stack of centred announcements; pass
+ * align="center" only where a section genuinely wants the pause.
+ */
 export function SectionHeading({
   eyebrow,
-  eyebrowIcon,
+  index,
   title,
   accent,
   subtitle,
-  align = 'center',
+  align = 'left',
   onDark = false,
   className,
   titleClassName,
+  size = 'lg',
 }) {
   const centered = align === 'center'
   const parts = accent && typeof title === 'string' ? title.split(accent) : null
+  const sizes = {
+    lg: 'text-[2.1rem] sm:text-[3rem] lg:text-[3.9rem]',
+    md: 'text-[1.85rem] sm:text-[2.4rem] lg:text-[3rem]',
+  }
 
   return (
     <div
       className={cn(
-        'flex flex-col gap-5',
+        'flex flex-col',
         centered ? 'items-center text-center' : 'items-start text-left',
         className,
       )}
     >
       {eyebrow && (
-        <Reveal direction="up" duration={0.55}>
-          <Eyebrow icon={eyebrowIcon} onDark={onDark}>
+        <Reveal direction="up" duration={0.5} className="mb-6">
+          <Eyebrow index={index} onDark={onDark}>
             {eyebrow}
           </Eyebrow>
         </Reveal>
@@ -55,7 +70,8 @@ export function SectionHeading({
       <Reveal direction="up" delay={0.06}>
         <h2
           className={cn(
-            'max-w-4xl text-balance text-3xl font-extrabold leading-[1.08] sm:text-4xl lg:text-[3.1rem]',
+            'max-w-[19ch] text-balance font-semibold',
+            sizes[size] ?? sizes.lg,
             onDark && 'text-white',
             titleClassName,
           )}
@@ -63,7 +79,7 @@ export function SectionHeading({
           {parts && parts.length > 1 ? (
             <>
               {parts[0]}
-              <span className="text-gradient">{accent}</span>
+              <span className="text-ember-500">{accent}</span>
               {parts.slice(1).join(accent)}
             </>
           ) : (
@@ -72,11 +88,11 @@ export function SectionHeading({
         </h2>
       </Reveal>
       {subtitle && (
-        <Reveal direction="up" delay={0.12}>
+        <Reveal direction="up" delay={0.12} className="mt-7">
           <p
             className={cn(
-              'max-w-2xl text-base leading-relaxed sm:text-[1.05rem]',
-              onDark ? 'text-navy-100/75' : 'text-ink-soft',
+              'max-w-[46ch] text-[1.02rem] leading-[1.65]',
+              onDark ? 'text-navy-100/70' : 'text-ink-soft',
             )}
           >
             {subtitle}

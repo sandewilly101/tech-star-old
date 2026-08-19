@@ -1,38 +1,35 @@
 import { motion } from 'motion/react'
 import { usePrefersReducedMotion } from '@/hooks/useMediaQuery'
+import { EASE } from '@/lib/motion'
 
 const OFFSETS = {
-  up: { y: 34, x: 0 },
-  down: { y: -34, x: 0 },
-  left: { x: 44, y: 0 },
-  right: { x: -44, y: 0 },
+  up: { y: 1, x: 0 },
+  down: { y: -1, x: 0 },
+  left: { x: 1, y: 0 },
+  right: { x: -1, y: 0 },
   none: { x: 0, y: 0 },
 }
 
 /**
- * Scroll-triggered entrance. One component so every section animates with the
- * same curve and timing, and every animation collapses to a plain fade when
- * the visitor asks for reduced motion.
+ * Scroll-triggered entrance. Deliberately restrained: a short travel on a long
+ * decelerating curve, no blur. Blur-plus-slide reads as a template effect;
+ * this reads as the page settling.
  */
 export default function Reveal({
   children,
   as = 'div',
   direction = 'up',
   delay = 0,
-  duration = 0.7,
-  distance,
+  duration = 0.9,
+  distance = 26,
   once = true,
-  amount = 0.25,
-  blur = true,
+  amount = 0.2,
   className,
   ...props
 }) {
   const reduced = usePrefersReducedMotion()
   const Tag = motion[as] ?? motion.div
-  const base = OFFSETS[direction] ?? OFFSETS.up
-  const offset = distance
-    ? { x: Math.sign(base.x) * distance, y: Math.sign(base.y) * distance }
-    : base
+  const dir = OFFSETS[direction] ?? OFFSETS.up
 
   if (reduced) {
     const Plain = as
@@ -46,10 +43,10 @@ export default function Reveal({
   return (
     <Tag
       className={className}
-      initial={{ opacity: 0, ...offset, filter: blur ? 'blur(8px)' : 'blur(0px)' }}
-      whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, x: dir.x * distance, y: dir.y * distance }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once, amount }}
-      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration, delay, ease: EASE }}
       {...props}
     >
       {children}
@@ -57,8 +54,8 @@ export default function Reveal({
   )
 }
 
-/** Staggered container — pair with <Reveal> children that use `custom`. */
-export function RevealGroup({ children, className, stagger = 0.09, once = true, ...props }) {
+/** Staggered container — pair with children that use the `revealItem` variant. */
+export function RevealGroup({ children, className, stagger = 0.08, once = true, ...props }) {
   const reduced = usePrefersReducedMotion()
   if (reduced) {
     return (
@@ -84,8 +81,11 @@ export function RevealGroup({ children, className, stagger = 0.09, once = true, 
   )
 }
 
-/** Word-by-word headline reveal. */
-export function RevealText({ text, className, wordClassName, delay = 0, as = 'h2' }) {
+/**
+ * Headline reveal that wipes each line up from behind a mask. Smoother and
+ * more deliberate than per-word fading, and it keeps the baseline steady.
+ */
+export function RevealText({ text, className, delay = 0, as = 'h2', stagger = 0.055 }) {
   const reduced = usePrefersReducedMotion()
   const Tag = motion[as] ?? motion.h2
   const words = String(text).split(' ')
@@ -101,15 +101,15 @@ export function RevealText({ text, className, wordClassName, delay = 0, as = 'h2
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.4 }}
-      variants={{ hidden: {}, show: { transition: { staggerChildren: 0.045, delayChildren: delay } } }}
+      variants={{ hidden: {}, show: { transition: { staggerChildren: stagger, delayChildren: delay } } }}
     >
       {words.map((word, i) => (
-        <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom">
+        <span key={`${word}-${i}`} className="inline-block overflow-hidden py-[0.1em] align-bottom">
           <motion.span
-            className={`inline-block ${wordClassName ?? ''}`}
+            className="inline-block"
             variants={{
-              hidden: { y: '110%', opacity: 0 },
-              show: { y: '0%', opacity: 1, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+              hidden: { y: '105%' },
+              show: { y: '0%', transition: { duration: 1, ease: EASE } },
             }}
           >
             {word}

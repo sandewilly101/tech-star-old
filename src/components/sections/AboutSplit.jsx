@@ -93,7 +93,7 @@ export default function AboutSplit() {
           <Reveal delay={0.06}>
             <h2 className="mt-6 text-3xl font-extrabold leading-[1.1] sm:text-4xl lg:text-[3rem]">
               Building Tanzania's next generation of{' '}
-              <span className="text-gradient">innovators</span>
+              <span className="text-ember-500">innovators</span>
             </h2>
           </Reveal>
 
@@ -113,21 +113,17 @@ export default function AboutSplit() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <ul className="mt-9 grid gap-3 sm:grid-cols-2">
-              {pillars.map((pillar) => {
-                const Glyph = Icon[pillar.icon]
-                return (
-                  <li
-                    key={pillar.label}
-                    className="group flex items-center gap-3 rounded-2xl border border-hairline bg-surface-2 px-4 py-3.5 transition-colors duration-300 hover:border-ember-500/40 hover:bg-ember-500/5"
-                  >
-                    <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-ember-500/12 text-ember-600 transition-transform duration-500 group-hover:scale-110 dark:text-ember-400">
-                      <Glyph className="size-4" />
-                    </span>
-                    <span className="text-sm font-bold text-ink">{pillar.label}</span>
-                  </li>
-                )
-              })}
+            <ul className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2.5 border-t border-hairline pt-8">
+              {pillars.map((pillar, index) => (
+                <li key={pillar.label} className="flex items-center gap-3">
+                  {index > 0 && (
+                    <span aria-hidden="true" className="size-1 rounded-full bg-ember-500/50" />
+                  )}
+                  <span className="font-display text-[0.95rem] font-medium tracking-tight text-ink">
+                    {pillar.label}
+                  </span>
+                </li>
+              ))}
             </ul>
           </Reveal>
 

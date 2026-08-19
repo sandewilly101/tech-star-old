@@ -1,97 +1,94 @@
 import { motion } from 'motion/react'
 import { Icon } from '@/lib/icons'
 import { whyUs } from '@/data/content'
-import { IconTile } from '@/components/ui/Atoms'
-import { SpotlightCard } from '@/components/ui/Cards'
+import { Eyebrow } from '@/components/ui/Atoms'
 import { RevealGroup } from '@/components/ui/Reveal'
 import { revealItem } from '@/lib/motion'
 import Reveal from '@/components/ui/Reveal'
 import Button from '@/components/ui/Button'
 import SmartImage from '@/components/ui/SmartImage'
 
-const accents = ['ember', 'ember', 'ember', 'navy']
-
-/** Bento layout: one tall statement panel beside a grid of differentiators. */
+/**
+ * A dark full-bleed counterweight to the light sections around it. The four
+ * differentiators are set as a ruled 2×2 of plain text — no cards and no icon
+ * tiles, so the type and the spacing do the work.
+ */
 export default function WhyUs() {
   return (
-    <section className="relative overflow-hidden bg-surface-2 py-20 lg:py-28">
-      <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-40" />
+    <section className="relative overflow-hidden bg-navy-950 py-20 text-white lg:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-0 size-[30rem] rounded-full bg-ember-500/8 blur-[120px]"
+        className="pointer-events-none absolute -left-40 top-0 size-[38rem] rounded-full bg-ember-500/12 blur-[140px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 bottom-0 size-[32rem] rounded-full bg-ember-600/10 blur-[140px]"
       />
 
-      <div className="shell relative grid gap-5 lg:grid-cols-12">
-        {/* Statement panel */}
-        <Reveal direction="right" className="lg:col-span-5">
-          <div className="noise relative flex h-full flex-col justify-between overflow-hidden rounded-[2rem] bg-navy-950 p-8 text-white sm:p-10">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -bottom-24 -right-16 size-72 rounded-full bg-ember-500/22 blur-[80px]"
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-16 top-0 size-56 rounded-full bg-ember-600/20 blur-[80px]"
-            />
+      <div className="shell relative grid gap-16 lg:grid-cols-12 lg:gap-12">
+        {/* Statement */}
+        <div className="lg:col-span-5">
+          <Reveal>
+            <Eyebrow index="02" onDark>
+              Why choose us
+            </Eyebrow>
+          </Reveal>
 
-            <div className="relative">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/8 px-4 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-ember-300">
-                <Icon.shield className="size-3.5" />
-                Why choose us
+          <Reveal delay={0.06}>
+            <h2 className="mt-7 max-w-[16ch] text-[2.1rem] font-semibold text-white sm:text-[2.8rem] lg:text-[3.4rem]">
+              Taught by people who have actually{' '}
+              <span className="text-ember-500">built things</span>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <p className="mt-7 max-w-[42ch] text-[1rem] leading-[1.7] text-navy-100/70">
+              Our educators and industry professionals bring real engineering experience into the
+              classroom — not theory borrowed from a textbook.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.18}>
+            <div className="mt-10 overflow-hidden rounded-2xl">
+              <SmartImage
+                src="/assets/img/Projects/train-trainer.jpeg"
+                fallback="/assets/img/about-4.JPG"
+                initials="TS"
+                alt="TechStar trainers running a workshop"
+                wrapperClassName="aspect-16/10"
+                className="size-full object-cover transition-transform duration-[1.4s] ease-out hover:scale-105"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.24}>
+            <Button to="/about" variant="glass" className="mt-8" icon={Icon.arrowRight}>
+              More about us
+            </Button>
+          </Reveal>
+        </div>
+
+        {/* Ruled 2×2 */}
+        <RevealGroup className="grid gap-x-12 border-t border-white/12 sm:grid-cols-2 lg:col-span-6 lg:col-start-7 lg:border-t-0">
+          {whyUs.map((item, index) => (
+            <motion.div
+              key={item.title}
+              variants={revealItem}
+              className="group border-b border-white/12 py-9 sm:py-12"
+            >
+              <span className="font-mono text-[0.7rem] tracking-[0.2em] text-ember-500">
+                {String(index + 1).padStart(2, '0')}
               </span>
 
-              <h2 className="mt-7 text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl">
-                Taught by people who have{' '}
-                <span className="text-gradient">actually built things</span>
-              </h2>
+              <h3 className="mt-5 text-[1.35rem] font-semibold leading-tight text-white transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-1.5 sm:text-[1.5rem]">
+                {item.title}
+              </h3>
 
-              <p className="mt-5 text-[0.98rem] leading-relaxed text-navy-100/72">
-                Our team of experienced educators and industry professionals are passionate about teaching
-                and mentoring young tech enthusiasts. They bring real-world experience and expertise to the
-                classroom, ensuring high-quality instruction and support.
+              <p className="mt-4 max-w-[36ch] text-[0.93rem] leading-[1.7] text-navy-100/65">
+                {item.description}
               </p>
-            </div>
-
-            <div className="relative mt-10">
-              <div className="mb-8 overflow-hidden rounded-2xl border border-white/12">
-                <SmartImage
-                  src="/assets/img/Projects/train-trainer.jpeg"
-                  fallback="/assets/img/about-4.JPG"
-                  initials="TS"
-                  alt="TechStar trainers running a workshop"
-                  wrapperClassName="aspect-16/9"
-                  className="size-full object-cover"
-                />
-              </div>
-              <Button to="/about" variant="glass" icon={Icon.arrowRight}>
-                Learn more
-              </Button>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* Feature grid */}
-        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:col-span-7 lg:content-start">
-          {whyUs.map((item, index) => {
-            const Glyph = Icon[item.icon]
-            return (
-              <motion.div key={item.title} variants={revealItem} className="h-full">
-                <SpotlightCard glow={accents[index % accents.length]} className="h-full p-7 sm:p-8">
-                  <IconTile icon={Glyph} accent={accents[index % accents.length]} />
-                  <h3 className="mt-6 text-lg font-extrabold text-ink">{item.title}</h3>
-                  <p className="mt-3 text-[0.93rem] leading-relaxed text-ink-soft">{item.description}</p>
-                  <span
-                    aria-hidden="true"
-                    className="mt-6 block h-px w-full bg-gradient-to-r from-hairline to-transparent"
-                  />
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-ink-muted transition-colors duration-300 group-hover:text-ember-500">
-                    0{index + 1}
-                    <Icon.arrowUpRight className="size-3.5 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
-                  </span>
-                </SpotlightCard>
-              </motion.div>
-            )
-          })}
+            </motion.div>
+          ))}
         </RevealGroup>
       </div>
     </section>

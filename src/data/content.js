@@ -43,6 +43,7 @@ export const services = [
       "We are the future of STEM and Math education in Tanzania's rural and underserved communities — teaching the skills that unlock everything else.",
     icon: "laptop",
     accent: "ember",
+    image: "/assets/img/Projects/codejika.jpeg",
   },
   {
     title: "ICT and Digital Solution Consulting",
@@ -50,6 +51,7 @@ export const services = [
       "Strategic guidance for digital transformation: optimising operations with cloud solutions, cybersecurity enhancements and process improvements.",
     icon: "gear",
     accent: "ember",
+    image: "/assets/img/about-3.jpg",
   },
   {
     title: "Prototyping and Testing",
@@ -57,6 +59,7 @@ export const services = [
       "Developing and testing product prototypes to identify design flaws and refine concepts, ensuring successful outcomes through iterative processes.",
     icon: "box",
     accent: "ember",
+    image: "/assets/img/new_slider/arduino.png",
   },
   {
     title: "PCB Design and Development",
@@ -64,6 +67,7 @@ export const services = [
       "Designing custom PCBs tailored to specific project requirements, with comprehensive testing and validation to ensure functionality and reliability.",
     icon: "circuit",
     accent: "navy",
+    image: "/assets/img/tabs/tab-1.png",
   },
   {
     title: "3D Printing and Scanning",
@@ -71,6 +75,7 @@ export const services = [
       "Advanced 3D printing and scanning for rapid prototyping, design refinement and digital object replication using state-of-the-art technology.",
     icon: "printer",
     accent: "ember",
+    image: "/assets/img/tabs/tab-2.png",
   },
   {
     title: "TechStar STEM & IoT - Robotics Kits",
@@ -78,6 +83,7 @@ export const services = [
       "Affordable, hands-on kits for students of all ages — built to teach the fundamentals of robotics, coding and IoT and grow real technical skill.",
     icon: "robot",
     accent: "ember",
+    image: "/assets/img/new_slider/robot-style-car-with-joystick.jpg",
   },
 ];
 
