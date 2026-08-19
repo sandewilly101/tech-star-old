@@ -17,31 +17,24 @@ export default function ProgramsShowcase() {
   const [active, setActive] = useState(0)
 
   return (
-    <section id="programs" className="relative overflow-hidden bg-navy-950 py-20 text-white lg:py-28">
-      <div aria-hidden="true" className="grid-lines absolute inset-0 opacity-[0.14]" />
+    <section id="programs" className="relative overflow-hidden bg-canvas py-20 lg:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-1/3 size-[34rem] rounded-full bg-ember-600/14 blur-[130px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 bottom-0 size-[30rem] rounded-full bg-ember-500/14 blur-[130px]"
+        className="pointer-events-none absolute -left-32 top-1/3 size-[34rem] rounded-full bg-ember-500/7 blur-[130px]"
       />
 
       <div className="shell relative">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            align="left"
-            onDark
+            index="03"
             eyebrow="Our programmes"
-            eyebrowIcon={Icon.rocket}
             title="Five bootcamps. One mission."
             accent="One mission."
             subtitle="Every track is hands-on, kit-supported and designed around the learners in front of us — from primary-school beginners to the teachers who will carry it forward."
             className="max-w-3xl"
           />
           <Reveal direction="left" className="shrink-0">
-            <Button to="/programs" variant="glass" icon={Icon.arrowRight}>
+            <Button to="/programs" variant="outline" icon={Icon.arrowRight}>
               All programmes
             </Button>
           </Reveal>
@@ -58,7 +51,7 @@ export default function ProgramsShowcase() {
                 onFocusCapture={() => setActive(index)}
                 animate={{ flex: isActive ? 3.4 : 1 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative min-w-0 overflow-hidden rounded-[1.75rem] border border-white/12"
+                className="group relative min-w-0 overflow-hidden rounded-[1.75rem] border border-hairline"
               >
                 <SmartImage
                   src={program.image}
@@ -148,7 +141,7 @@ export default function ProgramsShowcase() {
             <Link
               key={program.slug}
               to={`/programs/${program.slug}`}
-              className="group relative w-[80vw] max-w-sm shrink-0 snap-center overflow-hidden rounded-[1.5rem] border border-white/12"
+              className="group relative w-[80vw] max-w-sm shrink-0 snap-center overflow-hidden rounded-[1.5rem] border border-hairline"
             >
               <SmartImage
                 src={program.image}
