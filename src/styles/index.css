@@ -1,0 +1,404 @@
+@import "tailwindcss";
+
+/* Class-based dark mode — toggled by the theme switch in the navbar. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   Design tokens
+   Three colours only, exactly as on techstarhub.or.tz: brand navy (#070640),
+   brand orange (#f7921e) and white. Orange leads — it owns the buttons, icon
+   tiles, glows and the call-to-action panels. Navy is the dark neutral for
+   type and dark sections. There is no third hue anywhere in the palette.
+   ========================================================================== */
+@theme {
+  --font-display: "Bricolage Grotesque", "Inter Tight", system-ui, sans-serif;
+  --font-sans: "Inter Tight", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-navy-50: #f4f5fc;
+  --color-navy-100: #e7e8f6;
+  --color-navy-200: #c9caea;
+  --color-navy-300: #a0a1d8;
+  --color-navy-400: #7273c2;
+  --color-navy-500: #4d4dab;
+  --color-navy-600: #35348f;
+  --color-navy-700: #232270;
+  --color-navy-800: #131257;
+  --color-navy-900: #070640;
+  --color-navy-950: #04031f;
+
+  --color-ember-50: #fff8ef;
+  --color-ember-100: #fef0da;
+  --color-ember-200: #fddfb2;
+  --color-ember-300: #fcc77f;
+  --color-ember-400: #ffab4d;
+  --color-ember-500: #f7921e;
+  --color-ember-600: #e0810f;
+  --color-ember-700: #b8650b;
+  --color-ember-800: #8a4b0b;
+  --color-ember-900: #5f340a;
+  --color-ember-950: #331b04;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+  --radius-6xl: 3rem;
+
+  --shadow-glow-ember: 0 18px 60px -18px color-mix(in srgb, var(--color-ember-500) 65%, transparent);
+  --shadow-glow-navy: 0 24px 70px -24px color-mix(in srgb, var(--color-navy-900) 60%, transparent);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-drift: drift 26s ease-in-out infinite alternate;
+  --animate-drift-rev: drift-rev 32s ease-in-out infinite alternate;
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-marquee-rev: marquee-rev 46s linear infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-spin-slow: spin 26s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-gradient-pan: gradient-pan 9s ease infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @keyframes drift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(6%, -8%, 0) scale(1.18);
+    }
+  }
+  @keyframes drift-rev {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1.1);
+    }
+    100% {
+      transform: translate3d(-7%, 6%, 0) scale(0.94);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-rev {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.75;
+    }
+    70%,
+    100% {
+      transform: scale(2.1);
+      opacity: 0;
+    }
+  }
+  @keyframes gradient-pan {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+/* Semantic surface tokens — these flip between light and dark. */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-brand: var(--color-ember-500);
+  --color-accent: var(--color-ember-500);
+}
+
+@layer base {
+  :root {
+    --canvas: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f8f8fa;
+    --surface-3: #f0f0f4;
+    --hairline: #e8e8ee;
+    --hairline-strong: #d6d6e0;
+    --ink: #070640;
+    --ink-soft: #55566d;
+    --ink-muted: #8b8ca0;
+    --ring-color: color-mix(in srgb, var(--color-ember-500) 70%, transparent);
+    color-scheme: light;
+  }
+
+  .dark {
+    --canvas: #06051f;
+    --surface: #0d0b30;
+    --surface-2: #0a0827;
+    --surface-3: #16144a;
+    --hairline: color-mix(in srgb, #ffffff 10%, transparent);
+    --hairline-strong: color-mix(in srgb, #ffffff 18%, transparent);
+    --ink: #f5f5fb;
+    --ink-soft: #bcbdd4;
+    --ink-muted: #8e8fa8;
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--hairline);
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink-soft);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 700;
+    text-wrap: balance;
+  }
+
+  /* Display sizes get optical sizing and tighter tracking; small headings
+     stay looser so they do not crowd at 14–18px. */
+  h1,
+  h2 {
+    font-variation-settings: "opsz" 72, "wdth" 92;
+    letter-spacing: -0.038em;
+    line-height: 0.98;
+  }
+
+  h3,
+  h4,
+  h5 {
+    font-variation-settings: "opsz" 24, "wdth" 96;
+    letter-spacing: -0.018em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-ember-500) 32%, transparent);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember-500);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Lenis-driven smooth scrolling */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface-2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-navy-900) 28%, transparent);
+    border-radius: 999px;
+    border: 3px solid var(--surface-2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ember-500);
+  }
+}
+
+/* ==========================================================================
+   Component-level helpers
+   ========================================================================== */
+@layer components {
+  .shell {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+    max-width: 88rem;
+  }
+  @media (min-width: 640px) {
+    .shell {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .shell {
+      padding-inline: 3rem;
+    }
+  }
+
+  /* Frosted panel used by the navbar, floating cards and stat chips. */
+  .glass {
+    background: color-mix(in srgb, var(--surface) 68%, transparent);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid var(--hairline);
+  }
+
+  .glass-dark {
+    background: color-mix(in srgb, #05041c 42%, transparent);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid color-mix(in srgb, #ffffff 16%, transparent);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-ember-600) 0%,
+      var(--color-ember-500) 30%,
+      var(--color-ember-400) 50%,
+      var(--color-ember-500) 72%,
+      var(--color-ember-600) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: var(--animate-gradient-pan);
+  }
+
+  /* 1px animated gradient hairline around a card. */
+  .ring-gradient {
+    position: relative;
+  }
+  .ring-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      140deg,
+      color-mix(in srgb, var(--color-ember-500) 70%, transparent),
+      transparent 42%,
+      transparent 58%,
+      color-mix(in srgb, var(--color-ember-600) 60%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+  }
+  .ring-gradient:hover::before,
+  .ring-gradient:focus-within::before {
+    opacity: 1;
+  }
+
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.42;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);
+    background-size: 68px 68px;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(var(--color-ember-500), var(--color-ember-500));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 2px;
+  }
+
+  .shimmer {
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--ink) 8%, transparent) 40%,
+      color-mix(in srgb, var(--ink) 14%, transparent) 50%,
+      color-mix(in srgb, var(--ink) 8%, transparent) 60%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+}
+
+/* Respect the OS "reduce motion" setting across every animation we ship. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
