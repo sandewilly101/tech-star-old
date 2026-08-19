@@ -1,705 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>TechStar Innovation Hub</title>
-  <meta name="description" content="Explore our innovative STEM and IoT - Robotics Bootcamps, empowering learners of all ages with critical skills in robotics, programming, and IoT technologies. Join us to ignite creativity, problem-solving, and future-ready education.">
-  <meta name="keywords" content="STEM Bootcamps, IoT Bootcamps, Robotics Education, STEM for Kids, Teacher STEM Training, Future Skills, Programming, Innovation, Robotics Bootcamps, STEM Learning, IoT for Kids, STEM Training for Teachers">
-  <meta name="author" content="TechStar Innovation Hub">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="googlebeddf2d75ce866ea.html">
-
-  <meta property="og:title" content="STEM and IoT - Robotics Bootcamps | TechStar Innovation Hub">
-  <meta property="og:description" content="Join our STEM and IoT - Robotics Bootcamps to develop skills in robotics, programming, and IoT technologies. Perfect for kids, educators, and enthusiasts ready to embrace the future of innovation.">
-  <meta property="og:image" content="https://techstar-innovation-hub.onrender.com/assets/img/logo1.jpg">
-  <meta property="og:url" content="https://techstar-innovation-hub.onrender.com/">
-  <meta property="og:type" content="website">
-
-  <!-- Favicons -->
-  <link href="assets/img/logo4.png" rel="icon">
-  <link href="assets/img/logo4.png" rel="apple-touch-icon">
-
-  <!-- canonical link -->
-  <link rel="canonical" href="https://techstar-innovation-hub.onrender.com/">
-
-   <!-- Schema.org Markup for SEO -->
-   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "TechStar Innovation Hub",
-      "url": "https://techstar-innovation-hub.onrender.com/",
-      "logo": "https://techstar-innovation-hub.onrender.com/assets/img/logo.png",
-      "sameAs": [
-        "https://twitter.com/yourprofile",
-        "https://facebook.com/yourprofile",
-        "https://linkedin.com/in/yourprofile",
-        "https://instagram.com/yourprofile"
-      ],
-      "description": "TechStar Innovation Hub offers transformative STEM and IoT - Robotics Bootcamps, empowering kids, educators, and enthusiasts with future-ready skills in robotics, programming, and IoT technologies."
-    }
-  </script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  <script>
-    // Inline (not deferred) so it is ready before any <img onerror> in the body fires.
-    window.imgFallback = function (imgEl, initials) {
-      imgEl.onerror = null;
-      var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">' +
-        '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-        '<stop offset="0%" stop-color="#070640"/><stop offset="100%" stop-color="#f7921e"/>' +
-        '</linearGradient></defs>' +
-        '<rect width="200" height="200" fill="url(#g)"/>' +
-        '<text x="50%" y="53%" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">' + initials + '</text>' +
-        '</svg>';
-      imgEl.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-    };
-  </script>
-
-  <!-- ======================================================== -->
-</head>
-
-<body class="index-page">
-
-  <div class="topbar">
-    <div class="container-fluid container-xl">
-      <div class="topbar-info">
-        <span><i class="bi bi-geo-alt-fill"></i> Dar es Salaam &amp; Mtwara Region</span>
-        <span><i class="bi bi-envelope-fill"></i> techstarhub@gmail.com</span>
-        <span><i class="bi bi-telephone-fill"></i> +255 655 157 101</span>
-      </div>
-      <div class="topbar-social">
-        <a href="https://x.com/techStarhubtz?t=xw3CBnannnGdQU8ddhf3EA&s=08" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61562270747821&mibextid=ZbWKwL" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/techstarhub?igsh=cW94cWh0b2FrMWVm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="/assets/img/logo1.jpg" alt="logo">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home<br></a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li class="dropdown"><a href="#"><span>Programs</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="project1-details.html">STEM and IoT - Robotics Bootcamps</a></li>
-              <li><a href="project2-details.html">Kids STEM and IoT - Robotics Bootcamps</a></li>
-              <li><a href="project3-details.html">Train The Trainer STEM and IoT - Robotics Bootcamps</a></li>
-              <li><a href="project4-details.html">Youth STEM and IoT - Robotics Bootcamps</a></li>
-              <li><a href="project5-details.html">Girls In STEM and IoT - Robotics Bootcamps</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="courses.html">Get Started</a>
-
-    </div>
-  </header>
-
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero">
-      <div id="heroCarousel" data-bs-interval="6000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
-        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-        <div class="carousel-inner" role="listbox">
-
-          <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url(assets/img/new_slider/school-kids.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <div class="hero-copy">
-                  <span class="badge-pill"><i class="bi bi-stars"></i> STEM &amp; IoT Education</span>
-                  <h2 class="animate__animated animate__fadeInDown">TechStar Innovation Hub</h2>
-                  <p class="animate__animated animate__fadeInUp">We are the future of STEM and Math education in Tanzania's rural and underserved communities.</p>
-                  <div class="hero-actions">
-                    <a href="courses.html" class="btn btn-accent animate__animated animate__fadeInUp">Explore Courses <i class="bi bi-arrow-right"></i></a>
-                    <a href="about.html" class="btn btn-outline-light animate__animated animate__fadeInUp">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url(assets/img/new_slider/Screenshot.png)">
-            <div class="carousel-container">
-              <div class="container">
-                <div class="hero-copy">
-                  <span class="badge-pill"><i class="bi bi-stars"></i> Innovation In Action</span>
-                  <h2 class="animate__animated animate__fadeInDown">Crafting Concepts into Living Innovations</h2>
-                  <p class="animate__animated animate__fadeInUp">We nurture a new generation of innovators and leaders through hands-on learning and practical application that makes a positive impact in their communities.</p>
-                  <div class="hero-actions">
-                    <a href="courses.html" class="btn btn-accent animate__animated animate__fadeInUp">Explore Courses <i class="bi bi-arrow-right"></i></a>
-                    <a href="about.html" class="btn btn-outline-light animate__animated animate__fadeInUp">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <div class="hero-copy">
-                  <span class="badge-pill"><i class="bi bi-stars"></i> Prototype To Reality</span>
-                  <h2 class="animate__animated animate__fadeInDown">Bringing Prototypes to Reality</h2>
-                  <p class="animate__animated animate__fadeInUp">We build a generation of creative leaders and problem-solvers through experiential learning and community-oriented projects.</p>
-                  <div class="hero-actions">
-                    <a href="courses.html" class="btn btn-accent animate__animated animate__fadeInUp">Explore Courses <i class="bi bi-arrow-right"></i></a>
-                    <a href="about.html" class="btn btn-outline-light animate__animated animate__fadeInUp">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slide 4 -->
-          <div class="carousel-item" style="background-image: url(assets/img/new_slider/robot-style-car-with-joystick.jpg)">
-            <div class="carousel-container">
-              <div class="container">
-                <div class="hero-copy">
-                  <span class="badge-pill"><i class="bi bi-stars"></i> Real Solutions</span>
-                  <h2 class="animate__animated animate__fadeInDown">Manifesting Creative Ideas into Real Solutions</h2>
-                  <p class="animate__animated animate__fadeInUp">We cultivate future innovators and change-makers by providing hands-on learning experiences that promote meaningful contributions to the community.</p>
-                  <div class="hero-actions">
-                    <a href="courses.html" class="btn btn-accent animate__animated animate__fadeInUp">Explore Courses <i class="bi bi-arrow-right"></i></a>
-                    <a href="about.html" class="btn btn-outline-light animate__animated animate__fadeInUp">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hero-figure">
-          <div class="frame">
-            <img src="assets/img/new_slider/child-making-robot.jpg" alt="Student building a robotics project at TechStar Innovation Hub">
-          </div>
-          <div class="float-card glass animate-float">
-            <span class="dot"></span>
-            <div>
-              <span class="label">Live Impact</span>
-              <span class="value">3,500+ Students Trained</span>
-            </div>
-          </div>
-        </div>
-
-        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-        </a>
-
-      </div>
-    </section>
-    <!-- /Hero Section -->
-
-    <!-- Counts Section -->
-    <section id="counts" class="section counts">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
-              <span data-purecounter-start="0" data-purecounter-end="3500" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Students</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="stat-icon"><i class="bi bi-building-fill"></i></div>
-              <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Schools</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
-              <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Young Innovators Supported</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="stat-icon"><i class="bi bi-cpu-fill"></i></div>
-              <span data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="1" class="purecounter"></span>
-              <p>TechStar IoT Kits</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Counts Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-4 align-items-center">
-
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-            <div class="split-media caption-center">
-              <img src="assets/img/about.jpg" class="img-fluid" alt="Students learning at TechStar Innovation Hub">
-              <div class="media-caption-center">
-                <span class="cap-title">Our Makerspace</span>
-                <span class="cap-sub">Innovation in Action</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Who We Are?</h3>
-            <p>TechStar Innovation Hub is Tanzania's forward-thinking platform for the next generation of innovators — offering hands-on STEM education in coding, Artificial Intelligence and the Internet of Things across rural and underserved communities.</p>
-            <p class="mb-0">We enable learners to transform their best ideas into creative solutions that bring about positive, lasting change.</p>
-            <a href="about.html" class="read-more"><span>About Us</span><i class="bi bi-arrow-right"></i></a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Why Us Section -->
-    <section id="why-us" class="section why-us">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="why-box">
-              <h3>Why Choose Us</h3>
-              <p>
-                Our team of experienced educators and industry professionals are passionate about teaching and mentoring young tech enthusiasts. They bring real-world experience and expertise to the classroom, ensuring high-quality instruction and support.
-              </p>
-              <div>
-                <a href="about.html" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Why Box -->
-
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="col-xl-4">
-                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-clipboard-data"></i>
-                  <h4>Inclusive Environment</h4>
-                  <p>We believe that tech education should be accessible to all. Our programs are designed to be inclusive and welcoming.</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-gem"></i>
-                  <h4>Hands-On Learning</h4>
-                  <p>Emphasis project-based learning, giving participants the opportunity to apply theoretical knowledge to practical, real-world scenarios</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-inboxes"></i>
-                  <h4>Cutting-Edge Curriculum</h4>
-                  <p>Our curriculum is continuously updated to reflect the latest trends and advancements in technology</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Why Us Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="eyebrow"><i class="bi bi-grid-fill"></i> What We Do</span>
-        <h2>Our Services</h2>
-        <p>Practical, hands-on technology services and training for learners, schools and communities.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-        <div class="row gy-4">
-
-          <!-- Service 1: Digital Skills, Coding, AI, and IoT Training -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-laptop"></i>
-              </div>
-              <a href="#services" class="stretched-link">
-                <h3>Digital Skills, Coding, AI, and IoT Training</h3>
-              </a>
-              <p>We are the Future of STEM and Math Education in Tanzania's Rural and Underserved Communities.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Service 2: ICT and Digital Solution Consulting -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-gear"></i>
-              </div>
-              <a href="#services" class="stretched-link">
-                <h3>ICT and Digital Solution Consulting</h3>
-              </a>
-              <p>Providing strategic guidance for digital transformation, optimizing operations with cloud solutions, cybersecurity enhancements, and process improvements.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Service 3: Prototyping and Testing -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-box-seam"></i>
-              </div>
-              <a href="#services" class="stretched-link">
-                <h3>Prototyping and Testing</h3>
-              </a>
-              <p>Developing and testing product prototypes to identify design flaws and refine concepts, ensuring successful product outcomes through iterative processes.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Service 4: PCB Design and Development -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-motherboard"></i>
-              </div>
-              <a href="#services" class="stretched-link">
-                <h3>PCB Design and Development</h3>
-              </a>
-              <p>Designing custom PCBs tailored to specific project requirements, with comprehensive testing and validation to ensure functionality and reliability.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Service 5: 3D Printing and Scanning -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-printer"></i>
-              </div>
-              <a href="#services" class="stretched-link">
-                <h3>3D Printing and Scanning</h3>
-              </a>
-              <p>Offering advanced 3D printing and scanning services for rapid prototyping, design refinement, and digital object replication using state-of-the-art technology.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <!-- Service 6: STEM and IoT – Robotics Kits -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <a href="#services" class="stretched-link">
-                <h3>TechStar STEM and IoT - Robotics Kits</h3>
-              </a>
-              <p>TechStar's STEM and IoT - Robotics Kits provide an affordable, hands-on learning experience for students of all ages. These kits are designed to teach the fundamentals of robotics, coding, and IoT, helping learners develop critical technical skills.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- CTA Section -->
-    <section class="cta section">
-      <div class="container" data-aos="zoom-in">
-        <div class="cta-block">
-          <div class="glow-circle"></div>
-          <div class="glow-circle"></div>
-          <div class="inner">
-            <h2>Ready to Ignite the Next Generation of Innovators?</h2>
-            <p>Join a TechStar bootcamp and give your learners hands-on experience in coding, AI, IoT and robotics — built for Tanzania's classrooms and communities.</p>
-            <div class="cta-actions">
-              <a href="courses.html" class="btn btn-white">Get Started <i class="bi bi-arrow-right"></i></a>
-              <a href="contact.html" class="btn btn-outline-light">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /CTA Section -->
-
-    <!-- Partners Section -->
-    <section id="partners" class="partners section">
-      <div class="container section-title" data-aos="fade-up">
-        <span class="eyebrow"><i class="bi bi-handshake"></i> Who We Work With</span>
-        <h2>Our Partners</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center gy-4">
-
-          <div class="col-xl-2 col-md-3 col-6 partner-logo">
-            <a href="https://codejika.com/">
-              <img src="assets/img/partners/jika.png" class="img-fluid" alt="Code Jika">
-            </a>
-          </div><!-- End Partner Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 partner-logo">
-            <a href="https://hourofcode.com/us">
-              <img src="assets/img/partners/hour_of_code.png" class="img-fluid" alt="Hour of Code">
-            </a>
-          </div><!-- End Partner Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 partner-logo">
-            <a href="https://technovationchallenge.org/">
-              <img src="assets/img/partners/technovation_girls.png" class="img-fluid" alt="Technovation Girls">
-            </a>
-          </div><!-- End Partner Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 partner-logo">
-            <a href="https://assumpterdigitalschools.ac.tz/">
-              <img src="assets/img/partners/assumpter.png" class="img-fluid" alt="Assumpter Digital Schools">
-            </a>
-          </div><!-- End Partner Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 partner-logo">
-            <a href="https://assumpterdigitalschools.ac.tz/">
-              <img src="assets/img/partners/al-irshaad.png" class="img-fluid" alt="al-irshaad School">
-            </a>
-          </div><!-- End Partner Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 partner-logo">
-            <a href="https://technovationchallenge.org/">
-              <img src="assets/img/partners/rightway.jpeg" class="img-fluid" alt="Rightway School">
-            </a>
-          </div><!-- End Partner Item -->
-
-        </div>
-      </div>
-
-    </section>
-
-
-    <!-- Trainers Index Section -->
-    <section id="trainers-index" class="section trainers-index light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <span class="eyebrow"><i class="bi bi-people-fill"></i> Meet The Team</span>
-        <h2>Our Team</h2>
-        <p>The people building TechStar Innovation Hub.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="assets/img/trainers/trainer-1-1.jpeg" class="img-fluid" alt="Eng. Michael Thomas">
-              <div class="member-content">
-                <h4>Eng. Michael Thomas</h4>
-                <span>Founder &amp; CEO, TechStar Innovation Hub</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="assets/img/trainers/trainer-6.jpeg" class="img-fluid" alt="Ms. Jessica Mshama">
-              <div class="member-content">
-                <h4>Ms. Jessica Mshama</h4>
-                <span>Co-Founder &amp; FM, TechStar Innovation Hub</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="assets/img/trainers/trainer-2-1.JPG" class="img-fluid" alt="Eng. Fatuma Mwamba">
-              <div class="member-content">
-                <h4>Eng. Fatuma Mwamba</h4>
-                <span>Co-Founder &amp; TO, TechStar Innovation Hub</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/jessicamshama/"><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/jessica-mshama-51a997187/"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-        <div class="text-center mt-5" data-aos="fade-up">
-          <a href="team.html" class="btn btn-outline-navy">Meet the Full Team <i class="bi bi-arrow-right"></i></a>
-        </div>
-
-      </div>
-
-    </section><!-- /Trainers Index Section -->
-
-    <!-- Newsletter CTA -->
-    <section class="section pt-0">
-      <div class="container" data-aos="zoom-in">
-        <div class="cta-block cta-newsletter">
-          <div class="glow-circle"></div>
-          <div class="glow-circle"></div>
-          <div class="inner">
-            <h2>Stay Connected With TechStar</h2>
-            <p>Subscribe to our newsletter and be the first to hear about new bootcamps, workshops and community innovation stories.</p>
-            <form class="php-email-form newsletter-inline-form" data-newsletter>
-              <input type="email" name="email" placeholder="Enter your email address" required>
-              <input type="submit" value="Subscribe">
-            </form>
-            <p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
-            <div class="sent-message"></div>
-            <div class="error-message"></div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Newsletter CTA -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">TechStar Innovation Hub</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>Dar es Salaam & Mtwara Region</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+255 655 157 101// +255 763 773 932</span></p>
-            <p><strong>Email:</strong> <span>techstarhub@gmail.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href="https://x.com/techStarhubtz?t=xw3CBnannnGdQU8ddhf3EA&s=08"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61562270747821&mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/techstarhub?igsh=cW94cWh0b2FrMWVm"><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#services">Digital Skills, Coding, AI, and IoT Training</a></li>
-            <li><a href="#services">ICT and Digital Solution Consulting</a></li>
-            <li><a href="#services">Prototyping and Testing</a></li>
-            <li><a href="#services">PCB Design and Development</a></li>
-            <li><a href="#services">3D Printing and Scanning</a></li>
-            <li><a href="#services">TechStar STEM and IoT - Robotics Kits</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form class="php-email-form" data-newsletter>
-            <div class="newsletter-form">
-              <input type="email" name="email" required>
-              <input type="submit" value="Subscribe">
-            </div>
-            <div class="sent-message"></div>
-            <div class="error-message"></div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">TechStar Innovation Hub</strong> <span>All Rights Reserved</span></p>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070640" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#04031f" media="(prefers-color-scheme: dark)" />
+
+    <title>TechStar Innovation Hub — STEM, AI, IoT &amp; Robotics Education in Tanzania</title>
+    <meta
+      name="description"
+      content="TechStar Innovation Hub delivers hands-on STEM, coding, AI, IoT and robotics bootcamps to learners, teachers and schools across Tanzania's rural and underserved communities."
+    />
+    <meta
+      name="keywords"
+      content="STEM Bootcamps, IoT Bootcamps, Robotics Education Tanzania, STEM for Kids, Teacher STEM Training, Coding, AI, Innovation, TechStar Innovation Hub"
+    />
+    <meta name="author" content="TechStar Innovation Hub" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="googlebeddf2d75ce866ea.html" />
+    <link rel="canonical" href="https://techstar-innovation-hub.onrender.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TechStar Innovation Hub" />
+    <meta property="og:title" content="TechStar Innovation Hub — STEM, AI, IoT &amp; Robotics Education" />
+    <meta
+      property="og:description"
+      content="Hands-on STEM, coding, AI, IoT and robotics bootcamps for kids, youth, girls and teachers across Tanzania."
+    />
+    <meta property="og:image" content="https://techstar-innovation-hub.onrender.com/assets/img/logo1.jpg" />
+    <meta property="og:url" content="https://techstar-innovation-hub.onrender.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TechStar Innovation Hub" />
+    <meta
+      name="twitter:description"
+      content="Hands-on STEM, coding, AI, IoT and robotics bootcamps across Tanzania."
+    />
+    <meta name="twitter:image" content="https://techstar-innovation-hub.onrender.com/assets/img/logo1.jpg" />
+
+    <link rel="icon" href="/assets/img/logo4.png" />
+    <link rel="apple-touch-icon" href="/assets/img/logo4.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "TechStar Innovation Hub",
+        "url": "https://techstar-innovation-hub.onrender.com/",
+        "logo": "https://techstar-innovation-hub.onrender.com/assets/img/logo.png",
+        "email": "techstarhub@gmail.com",
+        "telephone": "+255655157101",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mtwara",
+          "addressRegion": "Mtwara Region",
+          "addressCountry": "TZ"
+        },
+        "sameAs": [
+          "https://x.com/techStarhubtz",
+          "https://www.facebook.com/profile.php?id=61562270747821",
+          "https://www.instagram.com/techstarhub"
+        ],
+        "description": "TechStar Innovation Hub offers transformative STEM and IoT - Robotics bootcamps, empowering kids, educators and enthusiasts with future-ready skills in robotics, programming, AI and IoT technologies."
+      }
+    </script>
+
+    <script>
+      // Applied before paint so the theme never flashes.
+      (function () {
+        try {
+          var stored = localStorage.getItem('techstar-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
