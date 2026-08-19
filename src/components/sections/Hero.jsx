@@ -86,7 +86,7 @@ export default function Hero() {
 
       <div className="shell relative grid w-full items-center gap-14 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 xl:gap-16">
         {/* ---------------- Copy ---------------- */}
-        <motion.div style={{ y: copyY, opacity: copyFade }} className="relative max-w-2xl">
+        <motion.div style={reduced ? undefined : { y: copyY, opacity: copyFade }} className="relative max-w-2xl">
           <AnimatePresence mode="wait">
             <motion.span
               key={`eyebrow-${index}`}
@@ -192,7 +192,7 @@ export default function Hero() {
         </motion.div>
 
         {/* ---------------- Art ---------------- */}
-        <motion.div style={{ y: artY }} className="relative hidden lg:block">
+        <motion.div style={reduced ? undefined : { y: artY }} className="relative hidden lg:block">
           <TiltCard strength={7} className="relative mx-auto max-w-[26.5rem] xl:max-w-[29rem]">
             {/* Main frame */}
             <div className="relative rounded-[2.25rem] border border-white/15 bg-white/6 p-2.5 backdrop-blur-md shadow-[0_50px_120px_-40px_rgba(0,0,0,.85)]">

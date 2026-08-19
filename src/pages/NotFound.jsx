@@ -16,6 +16,7 @@ export default function NotFound() {
   useSeo({
     title: 'Page not found',
     description: 'The page you were looking for has moved or no longer exists.',
+    noindex: true,
   })
 
   return (

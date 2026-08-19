@@ -14,12 +14,13 @@ const setMeta = (selector, attr, value) => {
 }
 
 /** Per-route document title, description, canonical URL and OG tags. */
-export function useSeo({ title, description, path, image } = {}) {
+export function useSeo({ title, description, path, image, noindex = false } = {}) {
   useEffect(() => {
     const fullTitle = title ? `${title} | ${site.name}` : `${site.name} — STEM, AI, IoT & Robotics Education`
     document.title = fullTitle
 
     setMeta('meta[name="description"]', 'content', description)
+    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, follow' : 'index, follow')
     setMeta('meta[property="og:title"]', 'content', fullTitle)
     setMeta('meta[property="og:description"]', 'content', description)
     setMeta('meta[name="twitter:title"]', 'content', fullTitle)
@@ -41,5 +42,5 @@ export function useSeo({ title, description, path, image } = {}) {
       document.head.appendChild(canonical)
     }
     canonical.setAttribute('href', url)
-  }, [title, description, path, image])
+  }, [title, description, path, image, noindex])
 }

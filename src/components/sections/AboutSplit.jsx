@@ -6,6 +6,7 @@ import { TiltCard } from '@/components/ui/Cards'
 import Reveal from '@/components/ui/Reveal'
 import Button from '@/components/ui/Button'
 import SmartImage from '@/components/ui/SmartImage'
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery'
 
 const pillars = [
   { icon: 'code', label: 'Coding' },
@@ -16,6 +17,7 @@ const pillars = [
 
 /** "Who we are" — a layered image collage against the mission statement. */
 export default function AboutSplit() {
+  const reduced = usePrefersReducedMotion()
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const yMain = useTransform(scrollYProgress, [0, 1], ['6%', '-6%'])
@@ -31,7 +33,7 @@ export default function AboutSplit() {
       <div className="shell grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Media collage */}
         <div className="relative order-1 lg:order-2">
-          <motion.div style={{ y: yMain }}>
+          <motion.div style={reduced ? undefined : { y: yMain }}>
             <TiltCard strength={6}>
               <div className="relative overflow-hidden rounded-[2rem] border border-hairline shadow-[0_40px_90px_-40px_rgba(7,6,64,.5)]">
                 <SmartImage
@@ -58,7 +60,7 @@ export default function AboutSplit() {
 
           {/* Secondary frame */}
           <motion.div
-            style={{ y: ySide }}
+            style={reduced ? undefined : { y: ySide }}
             className="absolute -bottom-12 -left-6 hidden w-44 overflow-hidden rounded-2xl border-4 border-canvas shadow-[0_28px_60px_-24px_rgba(7,6,64,.55)] sm:block lg:-left-12 lg:w-56"
           >
             <SmartImage

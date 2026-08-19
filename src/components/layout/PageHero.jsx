@@ -7,6 +7,7 @@ import { Aurora, Eyebrow } from '@/components/ui/Atoms'
 import { RevealText } from '@/components/ui/Reveal'
 import Reveal from '@/components/ui/Reveal'
 import SmartImage from '@/components/ui/SmartImage'
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery'
 
 /**
  * Shared masthead for every inner page: parallax photo, brand aurora,
@@ -26,6 +27,7 @@ export default function PageHero({
   align = 'left',
   compact = false,
 }) {
+  const reduced = usePrefersReducedMotion()
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
@@ -44,7 +46,7 @@ export default function PageHero({
       )}
     >
       {image && (
-        <motion.div style={{ y, scale }} className="absolute inset-0 -z-20">
+        <motion.div style={reduced ? undefined : { y, scale }} className="absolute inset-0 -z-20">
           <SmartImage
             src={image}
             fallback={fallback}
@@ -63,7 +65,7 @@ export default function PageHero({
       <Aurora intensity="soft" className="-z-10 opacity-60" />
       <div aria-hidden="true" className="grid-lines absolute inset-0 -z-10 opacity-[0.14]" />
 
-      <motion.div style={{ opacity: fade }} className="shell relative">
+      <motion.div style={reduced ? undefined : { opacity: fade }} className="shell relative">
         {breadcrumbs.length > 0 && (
           <Reveal direction="down" duration={0.5}>
             <nav

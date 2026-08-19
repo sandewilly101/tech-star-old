@@ -4,12 +4,14 @@ import { Icon } from '@/lib/icons'
 import { processSteps } from '@/data/content'
 import { SectionHeading } from '@/components/ui/Atoms'
 import Reveal from '@/components/ui/Reveal'
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery'
 
 /**
  * The six building blocks of the programme as a vertical timeline whose spine
  * fills in as the section scrolls past.
  */
 export default function ProcessTimeline() {
+  const reduced = usePrefersReducedMotion()
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.75', 'end 0.6'] })
   const spine = useSpring(scrollYProgress, { stiffness: 90, damping: 26, restDelta: 0.001 })
@@ -37,7 +39,7 @@ export default function ProcessTimeline() {
             className="absolute left-[1.4rem] top-3 hidden h-[calc(100%-3rem)] w-0.5 overflow-hidden rounded-full bg-hairline sm:block lg:hidden"
           >
             <motion.div
-              style={{ scaleY: spine }}
+              style={reduced ? { scaleY: 1 } : { scaleY: spine }}
               className="h-full w-full origin-top rounded-full bg-[linear-gradient(180deg,var(--color-ember-500),var(--color-plasma-500))]"
             />
           </div>
