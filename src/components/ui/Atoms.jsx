@@ -96,12 +96,8 @@ export function Counter({ value = 0, duration = 1.9, suffix = '', prefix = '', c
 
   useEffect(() => {
     if (!inView) return undefined
-    if (reduced) {
-      setDisplay(value)
-      return undefined
-    }
     const controls = animate(0, value, {
-      duration,
+      duration: reduced ? 0 : duration,
       ease: [0.16, 1, 0.3, 1],
       onUpdate: (latest) => setDisplay(Math.round(latest)),
     })

@@ -8,6 +8,7 @@ import { site, socials } from '@/data/site'
 import { useTheme } from '@/hooks/useTheme'
 import Button from '@/components/ui/Button'
 import SmartImage from '@/components/ui/SmartImage'
+import Logo from '@/components/ui/Logo'
 
 function ThemeToggle({ className }) {
   const { isDark, toggle } = useTheme()
@@ -161,11 +162,8 @@ function MobileDrawer({ open, onClose }) {
             className="fixed inset-y-0 right-0 z-[90] flex w-[min(23rem,88vw)] flex-col border-l border-hairline bg-canvas lg:hidden"
           >
             <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
-              <Link to="/" onClick={onClose} className="flex items-center gap-2.5">
-                <img src={site.logoMark} alt="" className="size-8 rounded-lg object-contain" />
-                <span className="font-display text-sm font-extrabold tracking-tight text-ink">
-                  TechStar
-                </span>
+              <Link to="/" onClick={onClose} aria-label="TechStar Innovation Hub — home">
+                <Logo size="sm" />
               </Link>
               <div className="flex items-center gap-2">
                 <ThemeToggle />
@@ -295,10 +293,13 @@ export default function Navbar() {
 
   useMotionValueEvent(scrollY, 'change', (latest) => setScrolled(latest > 24))
 
-  useEffect(() => {
+  // Navigating (including via browser back/forward) closes any open menu.
+  const [lastPath, setLastPath] = useState(location.pathname)
+  if (lastPath !== location.pathname) {
+    setLastPath(location.pathname)
     setDrawer(false)
     setMegaOpen(false)
-  }, [location.pathname])
+  }
 
   const openMega = () => {
     clearTimeout(closeTimer.current)
@@ -329,26 +330,16 @@ export default function Navbar() {
           )}
         >
           <div className="shell flex items-center gap-4">
-            <Link to="/" className="group flex shrink-0 items-center gap-3">
-              <span className="relative">
-                <span className="absolute -inset-1.5 rounded-2xl bg-ember-500/25 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100" />
-                <img
-                  src={site.logo}
-                  alt="TechStar Innovation Hub"
-                  className={cn(
-                    'relative rounded-xl object-contain transition-all duration-500',
-                    scrolled ? 'h-9 w-auto' : 'h-11 w-auto',
-                  )}
-                />
-              </span>
-              <span className="hidden flex-col leading-none sm:flex">
-                <span className="font-display text-[1.05rem] font-extrabold tracking-tight text-ink">
-                  TechStar
-                </span>
-                <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-ember-500">
-                  Innovation Hub
-                </span>
-              </span>
+            <Link to="/" aria-label="TechStar Innovation Hub — home" className="group relative flex shrink-0 items-center">
+              <span
+                aria-hidden="true"
+                className="absolute -inset-2 rounded-2xl bg-ember-500/12 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <Logo
+                size={scrolled ? 'sm' : 'md'}
+                className="relative"
+                markClassName="transition-transform duration-500 group-hover:rotate-[18deg]"
+              />
             </Link>
 
             <nav aria-label="Main" className="ml-auto hidden lg:block">

@@ -44,9 +44,9 @@ export default function AboutSplit() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-navy-950/85 to-transparent"
+                  className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-navy-950/85 to-transparent"
                 />
-                <div className="absolute inset-x-0 bottom-0 p-6">
+                <div className="absolute inset-x-0 top-0 p-6">
                   <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-ember-400">
                     Our makerspace
                   </span>

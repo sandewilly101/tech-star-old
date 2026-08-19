@@ -23,6 +23,9 @@ export default function Testimonials() {
 
   useEffect(() => {
     if (!embla) return undefined
+    // Reading the carousel's starting snap is a one-off sync with an external
+    // system, which is exactly what this effect exists for.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     onSelect()
     embla.on('select', onSelect).on('reInit', onSelect)
     return () => {

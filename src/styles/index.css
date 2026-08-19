@@ -292,12 +292,13 @@
   .text-gradient {
     background-image: linear-gradient(
       100deg,
-      var(--color-ember-500) 0%,
-      var(--color-ember-600) 28%,
-      var(--color-ember-500) 55%,
-      var(--color-plasma-500) 100%
+      var(--color-ember-600) 0%,
+      var(--color-ember-500) 30%,
+      var(--color-ember-400) 50%,
+      var(--color-ember-500) 72%,
+      var(--color-ember-600) 100%
     );
-    background-size: 220% auto;
+    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

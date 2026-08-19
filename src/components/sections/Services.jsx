@@ -3,7 +3,8 @@ import { Icon } from '@/lib/icons'
 import { services } from '@/data/content'
 import { IconTile, SectionHeading } from '@/components/ui/Atoms'
 import { SpotlightCard } from '@/components/ui/Cards'
-import { RevealGroup, revealItem } from '@/components/ui/Reveal'
+import { RevealGroup } from '@/components/ui/Reveal'
+import { revealItem } from '@/lib/motion'
 import Reveal from '@/components/ui/Reveal'
 import Button from '@/components/ui/Button'
 
@@ -45,7 +46,7 @@ export default function Services() {
                     {service.description}
                   </p>
 
-                  <span className="mt-7 inline-flex items-center gap-2 text-[0.85rem] font-bold text-ember-600 opacity-0 transition-all duration-400 group-hover:opacity-100 dark:text-ember-400">
+                  <span className="mt-7 inline-flex items-center gap-2 text-[0.85rem] font-bold text-ember-600 opacity-70 transition-all duration-400 group-hover:opacity-100 dark:text-ember-400">
                     Learn more
                     <Icon.arrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

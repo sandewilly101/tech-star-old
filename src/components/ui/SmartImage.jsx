@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
-import { cn } from '@/lib/utils'
-import { initialsDataUri } from '@/lib/utils'
+import { useState } from 'react'
+import { cn, initialsDataUri } from '@/lib/utils'
 
 /**
  * Image with a graceful degradation chain: primary source → optional secondary
@@ -20,14 +19,18 @@ export default function SmartImage({
 }) {
   const [stage, setStage] = useState(0)
   const [loaded, setLoaded] = useState(false)
+  const [lastSrc, setLastSrc] = useState(src)
+
+  // Pointing the component at a new image resets the fallback chain and the
+  // fade-in. Adjusting during render avoids a frame of the previous photo.
+  if (lastSrc !== src) {
+    setLastSrc(src)
+    setStage(0)
+    setLoaded(false)
+  }
 
   const chain = [src, fallback, initialsDataUri(initials)].filter(Boolean)
   const current = chain[Math.min(stage, chain.length - 1)]
-
-  useEffect(() => {
-    setStage(0)
-    setLoaded(false)
-  }, [src, fallback])
 
   return (
     <span className={cn('relative block overflow-hidden', wrapperClassName)}>

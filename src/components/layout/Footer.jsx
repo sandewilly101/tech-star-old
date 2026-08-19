@@ -6,6 +6,7 @@ import { programs } from '@/data/programs'
 import { services } from '@/data/content'
 import NewsletterForm from '@/components/ui/NewsletterForm'
 import Reveal from '@/components/ui/Reveal'
+import Logo from '@/components/ui/Logo'
 
 const quickLinks = [
   { label: 'Home', to: '/' },
@@ -77,14 +78,8 @@ export default function Footer() {
       {/* Link grid */}
       <div className="shell grid gap-12 py-16 lg:grid-cols-12 lg:gap-8 lg:py-20">
         <div className="lg:col-span-4">
-          <Link to="/" className="inline-flex items-center gap-3">
-            <img src={site.logoMark} alt="" className="size-11 rounded-xl object-contain" />
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-lg font-extrabold tracking-tight text-white">TechStar</span>
-              <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-ember-400">
-                Innovation Hub
-              </span>
-            </span>
+          <Link to="/" aria-label="TechStar Innovation Hub — home" className="inline-flex">
+            <Logo size="lg" onDark />
           </Link>
 
           <p className="mt-6 max-w-sm text-[0.92rem] leading-relaxed text-navy-100/65">

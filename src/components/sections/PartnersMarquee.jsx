@@ -13,14 +13,14 @@ export default function PartnersMarquee({ compact = false }) {
       target={partner.href.startsWith('http') ? '_blank' : undefined}
       rel="noreferrer noopener"
       title={partner.name}
-      className="group flex h-16 w-36 shrink-0 items-center justify-center sm:w-44"
+      className="group flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl bg-white px-5 py-3 shadow-[0_10px_30px_-18px_rgba(7,6,64,.35)] ring-1 ring-black/5 transition-transform duration-500 hover:-translate-y-1 sm:w-48"
     >
       <SmartImage
         src={partner.logo}
         initials={partner.name.slice(0, 2).toUpperCase()}
         alt={partner.name}
         wrapperClassName="h-full w-full"
-        className="size-full object-contain opacity-55 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-70 dark:brightness-0 dark:invert dark:group-hover:brightness-100 dark:group-hover:invert-0"
+        className="size-full object-contain opacity-70 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
       />
     </a>
   ))

@@ -84,16 +84,6 @@ export function RevealGroup({ children, className, stagger = 0.09, once = true, 
   )
 }
 
-export const revealItem = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(6px)' },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-  },
-}
-
 /** Word-by-word headline reveal. */
 export function RevealText({ text, className, wordClassName, delay = 0, as = 'h2' }) {
   const reduced = usePrefersReducedMotion()

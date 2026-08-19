@@ -1,7 +1,8 @@
 import { Icon } from '@/lib/icons'
 import { stats } from '@/data/content'
 import { Counter } from '@/components/ui/Atoms'
-import { RevealGroup, revealItem } from '@/components/ui/Reveal'
+import { RevealGroup } from '@/components/ui/Reveal'
+import { revealItem } from '@/lib/motion'
 import { motion } from 'motion/react'
 
 /** Impact numbers that count up as the band scrolls into view. */

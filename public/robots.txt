@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techstar-innovation-hub.onrender.com/sitemap.xml

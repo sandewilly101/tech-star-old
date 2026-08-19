@@ -45,7 +45,7 @@ export default function Hero() {
   const artY = useTransform(scrollYProgress, [0, 1], ['0%', '-14%'])
 
   const go = useCallback((next) => {
-    setIndex((current) => (next + heroSlides.length) % heroSlides.length)
+    setIndex(((next % heroSlides.length) + heroSlides.length) % heroSlides.length)
   }, [])
 
   useEffect(() => {
